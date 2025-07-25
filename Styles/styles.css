@@ -188,12 +188,16 @@ main {
 .attribution {
     margin-top: 2rem;
     font-size: 16px;
-    color: var(--very-dark-magenta);
+    color: var(--soft-pink);
 
 }
 
 .attribution a { 
     text-decoration: none;
     font-weight: 600;
-    color: var(--soft-pink);
+    color: var(--very-dark-magenta);
+}
+
+.attribution a:hover { 
+    color: var(--dark-grayish-magenta);
 }
