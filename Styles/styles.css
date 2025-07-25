@@ -1,0 +1,199 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} 
+
+:root {
+  /* Primary */
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+
+  /* Neutral */
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/* --- ESTILOS BASE (MOBILE FIRST) --- */
+body {
+    background-color: var(--white);
+    background-image: url('../images/bg-pattern-top-mobile.svg'), url('../images/bg-pattern-bottom-mobile.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, bottom right;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+}
+
+main { 
+    max-width: 340px;
+}
+
+.social-proof__header { 
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.social-proof__main-title { 
+    color: var(--very-dark-magenta);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.social-proof__main-description { 
+    color: var(--dark-grayish-magenta);
+}
+
+.social-proof__ratings-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.rating-item { 
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--light-grayish-magenta);
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+    text-align: center;
+}
+
+.rating-item__stars { 
+    margin-bottom: 0.5rem;
+}
+
+.social-proof__testimonials { 
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.testimonial-card { 
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    background-color: var(--very-dark-magenta);
+    color: var(--white);
+}
+
+.testimonial-card__header { 
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-card__avatar { 
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.testimonial-card__author-info { 
+    line-height: 1.2;
+}
+
+.testimonial-card__name {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.testimonial-card__status { 
+    color: var(--soft-pink);
+    font-size: 1rem;
+}
+
+.testimonial-card__quote p { 
+    color: var(--light-grayish-magenta);
+}
+
+/* --- ESTILOS PARA ESCRITORIO --- */
+@media (min-width: 1110px) {
+    body {
+        background-image: url('../images/bg-pattern-top-desktop.svg'), url('../images/bg-pattern-bottom-desktop.svg');
+    }
+
+    main {
+        max-width: 1110px;
+        /* Se activa el layout de Grid */
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        grid-template-rows: auto 1fr;
+        gap: 1.5rem 4rem;
+
+        /* Se define el "mapa" del layout */
+        grid-template-areas:
+            "header   ratings"
+            "cards    cards";
+    }
+
+    .social-proof__header {
+        grid-area: header;
+        text-align: left;
+        margin: 0;
+    }
+    
+    .social-proof__main-title {
+        font-size: 3rem;
+        line-height: 1.1;
+    }
+
+    .social-proof__ratings-list {
+        grid-area: ratings;
+        margin: 0;
+        align-items: flex-start; /* Alinea los items al inicio */
+    }
+
+    /* Se crea el efecto de escalonado */
+    .rating-item {
+        display: flex;
+        gap: 2rem;
+        padding: 1.25rem 2rem;
+        max-width: 445px;
+    }
+    .rating-item:nth-child(2) {
+        transform: translateX(48px);
+    }
+    .rating-item:nth-child(3) {
+        transform: translateX(96px);
+    }
+
+    .social-proof__testimonials {
+        grid-area: cards;
+        flex-direction: row;
+        align-items: flex-start; /* Alinea las tarjetas al inicio */
+    }
+
+    /* Se crea el efecto de escalonado vertical */
+    .testimonial-card:nth-child(2) {
+        transform: translateY(16px);
+    }
+    .testimonial-card:nth-child(3) {
+        transform: translateY(32px);
+    }
+}
+
+.attribution {
+    margin-top: 2rem;
+    font-size: 16px;
+    color: var(--very-dark-magenta);
+
+}
+
+.attribution a { 
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--soft-pink);
+}
