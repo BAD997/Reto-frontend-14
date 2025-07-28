@@ -26,10 +26,10 @@ body {
     font-family: 'League Spartan', sans-serif;
     font-size: 15px;
     line-height: 1.6;
-
+    min-height: 100vh;
+    
     display: grid;
     place-content: center;
-    min-height: 100vh;
     padding: 1.5rem;
 }
 
@@ -186,9 +186,12 @@ main {
 }
 
 .attribution {
+    border: 1px solid red;
+    margin: auto;
     margin-top: 2rem;
     font-size: 16px;
     color: var(--soft-pink);
+    
 
 }
 
